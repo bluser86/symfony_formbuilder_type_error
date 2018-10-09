@@ -13,6 +13,8 @@ class ExampleForm extends AbstractType
     {
         $builder->add('submit', SubmitType::class);
 
-        $builder->get('submit');
+        //$builder->all(); // Calling this before get() does not trigger the error.
+
+        $builder->get('submit'); // Throws the type error.
     }
 }
